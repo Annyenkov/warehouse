@@ -6,7 +6,9 @@ export const App = () => {
   return (
     <>
       <nav>
-        <Link to='/'>Home</Link>
+        <Link to='/' end>
+          Home
+        </Link>
         <Link to='/movies'>Movies</Link>
       </nav>
       <Routes>
