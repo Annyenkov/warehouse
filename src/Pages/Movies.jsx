@@ -3,6 +3,8 @@ import SearchBox from "components/SearchBox"
 import { useState, useEffect } from "react"
 import { useSearchParams } from "react-router-dom"
 import { searchMovieByName } from "services/movies-api"
+import { Suspense } from "react"
+import { PacmanLoader } from "react-spinners"
 
 const Movies = () => {
   const [movies, setMovies] = useState([])
@@ -29,8 +31,13 @@ const Movies = () => {
 
   return (
     <>
-      <SearchBox onSubmit={ handleFormSubmit } />
-    { movies && <MovieList movies={ movies } />}
+      <SearchBox onSubmit={handleFormSubmit} />
+      <Suspense fallback={ <PacmanLoader
+        color="blue"
+        size={25}
+      />}>
+        { movies && <MovieList movies={ movies } />}
+     </Suspense>
     </>
   )
 }

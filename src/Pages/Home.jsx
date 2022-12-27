@@ -3,7 +3,7 @@ import { useEffect } from "react"
 import { useState } from "react"
 import { fetchMoviesTrend } from "services/movies-api"
 
-export const Home = () => {
+const Home = () => {
   const [trendMovies, setTrendMovies] = useState(null)
 
   useEffect(() => {
@@ -21,3 +21,4 @@ export const Home = () => {
     </main>
   )
 }
+export default Home;
