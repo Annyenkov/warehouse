@@ -9,7 +9,7 @@ const MovieDetails = () => {
   const [movieDetails, setMovieDetails] = useState(null)
   const { movieId } = useParams()
   const location = useLocation()
-   const backLinkHref = location.state?.from ?? "/products";
+  const backLinkHref = location.state?.from ?? "/movies";
 
   useEffect(() => {
     try {
@@ -45,8 +45,8 @@ const MovieDetails = () => {
       </MovieCard>
       <MoreInfo>
         <h2>Additional information</h2>
-        <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+        <Link to={`/movies/${movieId}/cast`} state={{from: backLinkHref}}>Cast</Link>
+        <Link to={`/movies/${movieId}/reviews`} state={{from: backLinkHref}}>Reviews</Link>
         <Outlet/>
       </MoreInfo>
     </div>
