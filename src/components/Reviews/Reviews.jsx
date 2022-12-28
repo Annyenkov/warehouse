@@ -9,7 +9,7 @@ const Reviews = () => {
     movieReviews(movieId).then(setReviews)
   }, [movieId])
 
-  return (
+  return reviews.length > 0 ? (
     <ul>
       {reviews.map(({id, author, content}) => {
         return (
@@ -20,7 +20,7 @@ const Reviews = () => {
        )
       })}
     </ul>
-  )
+  ) : <p> There is no info </p>
 }
 
 export default Reviews

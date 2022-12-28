@@ -9,7 +9,7 @@ const Cast = () => {
   useEffect(() => {
     movieCast(movieId).then(setCast)
   }, [movieId])
-  return (
+  return cast.length > 0 ? (
     <List>
       {cast.map(({id, name, profile_path}) => {
         return (
@@ -20,7 +20,7 @@ const Cast = () => {
         )
       })}
     </List>
-  )
+  ) : <p> There is no info </p>
 }
 
 export default Cast
