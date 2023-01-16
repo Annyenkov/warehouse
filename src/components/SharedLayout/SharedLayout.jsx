@@ -8,8 +8,16 @@ const SharedLayout = () => {
     <>
       <Header>
         <nav>
-          <Link to='/'>Home</Link>
-          <Link to='/movies'>Movies</Link>
+          <Link to='/'>Показатели</Link>
+          <Link to='/supply'>Закупки</Link>
+          <Link to='/movies'>Продажи</Link>
+          <Link to='/goods'>Товары</Link>
+          <Link to='/movies'>Контрагенты</Link>
+          <Link to='/movies'>Деньги</Link>
+          <Link to='/movies'>Розница</Link>
+          <Link to='/movies'>Производство</Link>
+          <Link to='/movies'>Задачи</Link>
+          <Link to='/movies'>Приложения</Link>
         </nav>
       </Header>
       <Suspense fallback={ <PacmanLoader
